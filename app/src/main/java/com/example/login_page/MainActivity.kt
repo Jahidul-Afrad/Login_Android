@@ -45,7 +45,6 @@ class MainActivity : AppCompatActivity() {
 
             Class.forName("com.mysql.jdbc.Driver")
             val query = "select * from student"
-            result+=" Bkc "
             val con = DriverManager.getConnection(url, dbname, pass)
 
             val st = con.createStatement()
@@ -56,8 +55,6 @@ class MainActivity : AppCompatActivity() {
             rs.next()
                 val EMAIL = rs.getString("EMAIL")
                 val PASSWORD = rs.getString("password")
-            result+=" EMAIL "
-            result+=" PASSWORD "
                 //out.println(email+" "+password);
                 if (email != null && password != null) {
                     if (email == EMAIL && password == PASSWORD) {
